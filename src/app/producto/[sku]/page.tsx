@@ -2,7 +2,7 @@
 
 import { useState, use } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+//import Image from 'next/image';
 import { MOCK_PRODUCTS } from '@/data/mockProducts';
 import { buildWhatsAppUrl } from '@/lib/utils';
 import Header from '@/components/Header';
