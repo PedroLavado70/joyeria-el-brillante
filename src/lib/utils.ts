@@ -3,7 +3,11 @@ export function buildWhatsAppUrl(phone: string, text: string): string {
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
 }
 
-export function buildWhatsAppLink(phone: string, text: string): string {
+export function buildWhatsAppLink(text: string, phone: string = '+51955338403'): string {
+  // Si el primer parámetro es un número o si invierten el orden, lo maneja limpiamente
+  if (text.startsWith('+') || /^\d+$/.test(text)) {
+    return buildWhatsAppUrl(text, phone);
+  }
   return buildWhatsAppUrl(phone, text);
 }
 
